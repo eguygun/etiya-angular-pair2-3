@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl,Validators,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'product-list',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   products: string[] = [];
-  productName: string=""
+  //productName: string=""
+  productName = new FormControl('');
 
   constructor() { }
 
@@ -23,8 +25,12 @@ export class ProductListComponent implements OnInit {
   } 
   deleteproduct(productName: string){
     this.products=this.products.filter(c => c !== productName);
+  }
+
+  updateName() {
+    this.products.setValue('productName');
+  }
     
 }
 
 
-}

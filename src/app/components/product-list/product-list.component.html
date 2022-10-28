@@ -1,12 +1,25 @@
 
 <!-- Two way binding -->
+<!--
 <p>
     <label> Product Name </label>
     <input type="text" [(ngModel)]="productName">
-     <button (click)="addproducts(productName)"> add </button>
+    <button (click)="addproducts(productName)"> add </button>
      
 
 </p>
 <ul>
     <li *ngFor="let p of products">{{p}}<button (click)="deleteproduct(p)"> delete </button></li>
-</ul>
+</ul> -->
+
+
+<!-- Reactive Method denemesi -->
+<p>
+    <label for="productName">Product Name: </label>
+    <input id="productName" type="text" [formControl]="productName">
+    <button type="button" (click)="addproducts('a')">Add</button>
+</p>
+
+<p> 
+    Product Name: {{ productName.value }}
+</p>
