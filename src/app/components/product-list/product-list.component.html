@@ -1,0 +1,12 @@
+
+<!-- Two way binding -->
+<p>
+    <label> Product Name </label>
+    <input type="text" [(ngModel)]="productName">
+     <button (click)="addproducts(productName)"> add </button>
+     
+
+</p>
+<ul>
+    <li *ngFor="let p of products">{{p}}<button (click)="deleteproduct(p)"> delete </button></li>
+</ul>
